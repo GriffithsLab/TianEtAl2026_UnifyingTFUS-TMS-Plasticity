@@ -57,8 +57,8 @@ We simulate the model in response to varying TFUS parameters, including amplitud
 ## Codes:
 | File | Description |
 |----------| -------------|
-| main_FUS.m | The MATLAB code that generates the results from simulating different TFUS configurations |
-| main_TMS.m | The MATLAB code that generates the results from simulating different TMS configurations |
+| main_FUS.m | The MATLAB driver code that generates the results from simulating different TFUS configurations |
+| main_TMS.m | The MATLAB driver code that generates the results from simulating different TMS configurations |
 | supporting codes | Folder of the MATLAB codes needed to run simulations, including model equations, omega functions for CaDP, etc. |
 | plot omega function | Folder of the MATLAB codes for plotting the omega function of calcium-dependent plasticity (CaDP) |
 
