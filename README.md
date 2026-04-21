@@ -55,6 +55,13 @@ We simulate the model in response to varying TFUS parameters, including amplitud
 </p>
 
 ## Codes:
+| File | Description |
+|----------| -------------|
+| main_FUS.m | The MATLAB code that generates the results from simulating different TFUS configurations |
+| main_TMS.m | The MATLAB code that generates the results from simulating different TMS configurations |
+| supporting codes | Folder of the MATLAB codes needed to run simulations, including model equations, omega functions for CaDP, etc. |
+| plot omega function | Folder of the MATLAB codes for plotting the omega function of calcium-dependent plasticity (CaDP) |
+
 
 ## References:
 - Y. Meng, K. Hynynen, and N. Lipsman, “Applications of focused ultrasound in the brain: from thermoablation to drug delivery,” Nat Rev Neurol, vol. 17, no. 1, pp. 7–22, Jan. 2021, doi: 10.1038/s41582-020-00418-z
