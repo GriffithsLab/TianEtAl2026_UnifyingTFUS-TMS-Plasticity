@@ -54,6 +54,16 @@ We simulate the model in response to varying TFUS parameters, including amplitud
   <img src="https://github.com/user-attachments/assets/aeb07862-b2ae-40d7-b125-3c54f17efc89" width="900"/>
 </p>
 
+## Codes:
+
+## References:
+- Y. Meng, K. Hynynen, and N. Lipsman, “Applications of focused ultrasound in the brain: from thermoablation to drug delivery,” Nat Rev Neurol, vol. 17, no. 1, pp. 7–22, Jan. 2021, doi: 10.1038/s41582-020-00418-z
+- P. K. Fung and P. A. Robinson, “Neural field theory of synaptic metaplasticity with applications to theta burst stimulation,” J Theor Biol, vol. 340, pp. 164–176, Jan. 2014, doi: 10.1016/j.jtbi.2013.09.021
+- O. L. Gamboa, A. Antal, V. Moliadze, and W. Paulus, “Simply longer is not better: reversal of theta burst after-effect with prolonged stimulation,” Exp Brain Res, vol. 204, no. 2, pp. 181–187, Jul. 2010, doi: 10.1007/s00221-010-2293-4
+- K. Zeng et al., “Effects of different sonication parameters of theta burst transcranial ultrasound stimulation on human motor cortex,” Brain Stimul, vol. 17, no. 2, pp. 258–268, 2024, doi: 10.1016/j.brs.2024.03.001
+- K. Kadak et al., “Alpha rhythm subharmonics underlie responsiveness to theta burst stimulation via calcium metaplasticity,” eLife, vol. 14, Nov. 2025, doi: 10.7554/eLife.108563.1
+
+
 
 
 
