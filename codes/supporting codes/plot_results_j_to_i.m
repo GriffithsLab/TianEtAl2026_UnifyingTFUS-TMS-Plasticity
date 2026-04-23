@@ -1,4 +1,4 @@
-function [nu_ij, Ca_ij] = plot_results_j_to_i(Yout, Qout, tvec, params, iPop, jPop)
+function [nu_ij, nutil_ij, Ca_ij] = plot_results_j_to_i(Yout, Qout, tvec, params, iPop, jPop)
     % Visualize synapse from population jPop -> iPop (spatially averaged)
     Npop = 4; block_size = 7;
     Ny = size(Yout,2);
