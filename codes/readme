@@ -1,1 +1,166 @@
+## Replicating Figures
 
+### Figure 1
+
+The omega function can be replicated using `plot_omega.m` in the folder `plot omega function`.
+
+Use the following parameter settings:
+- `params_new = params_Tian`
+- `params_fung = params_Fung`
+
+Both parameter sets are provided in the folder.
+
+---
+
+### Figures 2–4 (General Instructions)
+
+The results in Figures 2–4 can be replicated using:
+- TFUS simulation: `main_FUS.m`
+- TMS simulation: `main_TMS.m`
+
+#### TFUS parameters
+Set the following variables:
+
+- Sonication duration: `params.Duration` (line 227)  
+- Pulse repetition frequency (PRF): `params.stim.cont.prf_hz` (line 243)  
+- Amplitude: `params.stim.cont.mean` (line 267)  
+- Duty cycle: `duty_cycle` (line 244)  
+
+**Important:**
+- TFUS amplitude is derived from TMS amplitude (`amp_TMS = 40`, line 263) via the equivalent-energy principle (Eq. 1, line 267)
+- **Exception:** Figure 4a — replace the equation in line 267 with explicit values
+
+#### TMS parameters
+
+- Duration: `params.Duration` (line 243)
+
+Protocol configurations:
+
+- **cTB-TMS**
+params.bursts = 3
+params.freq = 50
+params.oscillation_freq = 5
+params.on = 2
+params.off = 0
+
+
+- **iTB-TMS**
+params.bursts = 3
+params.freq = 50
+params.oscillation_freq = 5
+params.on = 2
+params.off = 8
+
+- **rTMS (1 Hz or 10 Hz)**
+
+params.bursts = 1
+params.freq = 50
+params.oscillation_freq = 1 or 10
+params.on = 2
+params.off = 0
+
+
+---
+
+### Plasticity Output
+
+Plasticity is quantified as:
+
+> Ratio of MEP change relative to baseline
+
+Output variable:
+
+pct_change_nu_ee
+
+
+---
+
+### Simulation Timing
+
+- Stimulation onset time: **50 s**
+- Total simulation time:  
+
+T = onset + stimulation duration + post-stimulation time
+
+
+**Example:**
+- cTB-TMS-40s with 5 min post-stimulation:
+
+T = 50 + 40 + 300 = 390
+
+
+---
+
+## Figure 2
+
+**a.**
+- cTB-TMS-40s and cTB-TMS-80s  
+- Post-stimulation time: 300 s
+
+- cTB-TFUS-40s and cTB-TFUS-80s  
+- PRF = 5 Hz  
+- Duty cycle = 10%  
+- Duration = 40 s / 80 s  
+- Post-stimulation time: 600 s  
+
+**b.**
+- All TMS protocols  
+- Post-stimulation time: 20 min  
+
+**c.**
+- All TFUS protocols  
+- Duration = 80 s  
+- Duty cycle = 10%  
+- Post-stimulation time: 10 min  
+
+---
+
+## Figure 3
+
+**c.**
+- Omega function same as Figure 1  
+
+**e.**
+- Protocols same as Figure 2  
+
+Variables correspond to:
+- `nu_ee` → excitatory connectivity  
+- `nutil_ee` → effective connectivity  
+- `Ca_ee` → calcium concentration  
+
+Locations:
+- `main_FUS.m` (line 696)
+- `main_TMS.m` (line 671)
+
+---
+
+## Figure 4 — TFUS Parameter Sweep
+
+**a.**
+- Replace equation in line 267 with explicit amplitude values  
+- (Only case where TFUS amplitude is manually changed)  
+
+Default:
+- Duration = 80 s  
+- PRF = 5 Hz  
+- Duty cycle = 10%  
+
+**b.**
+- PRF fixed at 5 Hz  
+- Duty cycle fixed at 10%  
+
+**c.**
+- Duration fixed at 80 s  
+- Duty cycle fixed at 10%  
+
+**d.**
+- Duration fixed at 80 s  
+- PRF fixed at 5 Hz  
+
+**e.**
+- PRF fixed at 5 Hz  
+- Duration adjusted based on duty cycle  
+
+Constraint:
+
+Total TFUS-ON time = duty cycle × duration = constant (10% × 80 s)
