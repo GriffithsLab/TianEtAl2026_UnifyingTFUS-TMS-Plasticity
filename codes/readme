@@ -78,7 +78,7 @@ pct_change_nu_ee
 ### Simulation Timing
 
 - Stimulation onset time: **50 s**
-- Total simulation time:  
+- Total simulation time:  T (in line 6 in both codes)
 
 T = onset + stimulation duration + post-stimulation time
 
@@ -124,9 +124,9 @@ T = 50 + 40 + 300 = 390
 - Protocols same as Figure 2  
 
 Variables correspond to:
-- `nu_ee` → excitatory connectivity  
-- `nutil_ee` → effective connectivity  
-- `Ca_ee` → calcium concentration  
+- `nu_ee` → nu 
+- `nutil_ee` → nu_tilda 
+- `Ca_ee` → intracellular calcium concentration  
 
 Locations:
 - `main_FUS.m` (line 696)
