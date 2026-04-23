@@ -668,7 +668,7 @@ V_e   = plot_results(Yout, Qout, tplot, params, 1);
 % plot_results_j_to_i(Yout, Qout, tvec_out, params,i,j) : result for each
 % dendrite projecting from populaiton j to population i
 
-[nu_ee, Ca_ee] = plot_results_j_to_i(Yout, Qout, tplot, params,1,1); 
+[nu_ee, nutil_ee, Ca_ee] = plot_results_j_to_i(Yout, Qout, tplot, params,1,1); 
 
 % plot_results_j_to_i(Yout, Qout, tplot, params, 3, 1);  % thalamic relay (3) receiving from cortex (1)
 % plot_results_j_to_i(Yout, Qout, tplot, params, 2, 1);  % ctx inhibitory receiving from ctx excitatory
