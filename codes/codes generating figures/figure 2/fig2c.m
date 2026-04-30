@@ -705,6 +705,29 @@ for jj = 1:length(PRF_vec)
     pct_change_nu_ee_vec(jj) = pct_change_nu_ee;
 end
 
+% plot
+
+% Category labels
+categories = {'2Hz-TFUS', 'cTB-TFUS','10Hz-TFUS','20Hz-TFUS'};
+
+figure;
+bar(pct_change_nu_ee_vec);
+
+% Set x-axis labels
+set(gca, 'XTickLabel', categories);
+
+% Optional formatting
+ylabel('ratio of MEP change to baseline');
+
+set(gca, 'FontSize', 12);
+
+end
+
+    % test stim waveform
+%     Tplot = 1; %s, time from stim-ONSET
+%     plotting_stim_waveform(params, Tplot)
+
+
     % test stim waveform
 %     Tplot = 1; %s, time from stim-ONSET
 %     plotting_stim_waveform(params, Tplot)

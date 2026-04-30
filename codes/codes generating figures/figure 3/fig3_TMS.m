@@ -679,6 +679,29 @@ function [nu_ee, nutil_ee, Ca_ee,pct_change_nu_ee] = fig3_TMS(duration)
     pct_change_nu_ee = (mean_nu_ee_last - params.nu_0_mx(1,1))/params.nu_0_mx(1,1); % ratio of change compared with ini
 
     %pct_change_nu_ee_vec(jj) = pct_change_nu_ee;
+
+    %plot
+
+    t_axis =  (output_interval*(1:length(nu_ee)) -  output_interval)+T_warmup;
+    
+    figure;
+    
+    % Left y-axis (first two signals)
+    yyaxis left
+    plot(t_axis, nu_ee, 'LineWidth', 1.5); hold on;
+    plot(t_axis, nutil_ee, 'LineWidth', 1.5);
+    ylabel('mM');
+    
+    % Right y-axis (third signal)
+    yyaxis right
+    plot(t_axis, Ca_ee, 'LineWidth', 1.5);
+    ylabel('uM');
+
+    
+    xlabel('Time (s)');
+    legend('nu_ee', 'nu_til_ee', 'Ca_ee');
+    
+    set(gca, 'FontSize', 12);
     
 
 end

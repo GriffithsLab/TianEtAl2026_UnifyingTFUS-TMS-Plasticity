@@ -705,6 +705,12 @@ for jj = 1:length(duration_vec)
     pct_change_nu_ee_vec(jj) = pct_change_nu_ee;
 end
 
+% plot
+plot(duration_vec,pct_change_nu_ee_vec)
+xlabel('sonication duration')
+ylabel('ratio of MEP change to baseline')
+
+
     % test stim waveform
 %     Tplot = 1; %s, time from stim-ONSET
 %     plotting_stim_waveform(params, Tplot)

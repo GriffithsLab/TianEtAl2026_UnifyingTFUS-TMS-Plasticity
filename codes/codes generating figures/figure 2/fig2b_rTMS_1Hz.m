@@ -687,3 +687,21 @@ for jj = 1:length(duration_vec)
     
 
 end
+
+% plot
+
+% Category labels
+categories = {'rTMS-1Hz 600s'};
+
+figure;
+bar(pct_change_nu_ee_vec);
+
+% Set x-axis labels
+set(gca, 'XTickLabel', categories);
+
+% Optional formatting
+ylabel('ratio of MEP change to baseline');
+
+set(gca, 'FontSize', 12);
+
+end

@@ -686,3 +686,21 @@ for jj = 1:length(duration_vec)
     
 
 end
+
+% plot
+
+% Category labels
+categories = {'cTBS-TMS 40s', 'cTBS-TMS 80s'};
+
+figure;
+bar(pct_change_nu_ee_vec);
+
+% Set x-axis labels
+set(gca, 'XTickLabel', categories);
+
+% Optional formatting
+ylabel('ratio of MEP change to baseline');
+
+set(gca, 'FontSize', 12);
+
+end
