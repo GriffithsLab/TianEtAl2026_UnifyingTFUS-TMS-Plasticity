@@ -59,26 +59,26 @@ function V_i = plot_results(Yout, Qout, tvec, params, iPop)
     end
 
     % --- Plot ---
-    figure; 
-    
-    subplot(4,1,1);
-    plot(tvec, Q_i, 'b','LineWidth',1.2);
-    ylabel('$Q_i$ (Hz)','Interpreter','latex');
-    title(['Population ', num2str(iPop)]);
-
-    subplot(4,1,2);
-    plot(tvec, Ca_i*1e6, 'Color',[0 .6 0],'LineWidth',1.2);
-    ylabel('$\mathrm{Ca}_i$ ($\mu$M)','Interpreter','latex');
-
-    subplot(4,1,3);
-    plot(tvec, nu_i*1e3, 'b','LineWidth',1.3); hold on;
-    plot(tvec, nutil_i*1e3, 'r--','LineWidth',1.1);
-    ylabel('$\nu_i,\ \tilde{\nu}_i$ (mM)','Interpreter','latex');
-    legend({'$\nu_i$','$\tilde{\nu}_i$'},'Interpreter','latex');
-
-    subplot(4,1,4);
-    plot(tvec, gNMDA_i*1e3, 'm','LineWidth',1.3);
-    xlabel('Time (s)'); ylabel('$g_{\mathrm{NMDA},i}$ (mS)','Interpreter','latex');
+    % figure; 
+    % 
+    % subplot(4,1,1);
+    % plot(tvec, Q_i, 'b','LineWidth',1.2);
+    % ylabel('$Q_i$ (Hz)','Interpreter','latex');
+    % title(['Population ', num2str(iPop)]);
+    % 
+    % subplot(4,1,2);
+    % plot(tvec, Ca_i*1e6, 'Color',[0 .6 0],'LineWidth',1.2);
+    % ylabel('$\mathrm{Ca}_i$ ($\mu$M)','Interpreter','latex');
+    % 
+    % subplot(4,1,3);
+    % plot(tvec, nu_i*1e3, 'b','LineWidth',1.3); hold on;
+    % plot(tvec, nutil_i*1e3, 'r--','LineWidth',1.1);
+    % ylabel('$\nu_i,\ \tilde{\nu}_i$ (mM)','Interpreter','latex');
+    % legend({'$\nu_i$','$\tilde{\nu}_i$'},'Interpreter','latex');
+    % 
+    % subplot(4,1,4);
+    % plot(tvec, gNMDA_i*1e3, 'm','LineWidth',1.3);
+    % xlabel('Time (s)'); ylabel('$g_{\mathrm{NMDA},i}$ (mS)','Interpreter','latex');
 
     
 end
