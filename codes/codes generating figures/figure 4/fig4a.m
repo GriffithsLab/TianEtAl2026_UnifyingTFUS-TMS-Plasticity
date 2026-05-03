@@ -706,6 +706,7 @@ for jj = 1:length(amp_vec)
 end
 
 % plot
+figure;
 plot(amp_vec,pct_change_nu_ee_vec)
 xlabel('TFUS amplitude')
 ylabel('ratio of MEP change to baseline')

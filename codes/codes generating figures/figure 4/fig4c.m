@@ -706,6 +706,7 @@ for jj = 1:length(PRF_vec)
 end
 
 % plot
+figure;
 plot(PRF_vec,pct_change_nu_ee_vec)
 xlabel('PRF')
 ylabel('ratio of MEP change to baseline')

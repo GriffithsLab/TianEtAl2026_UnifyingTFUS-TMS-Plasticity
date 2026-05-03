@@ -706,9 +706,13 @@ for jj = 1:length(duration_vec)
 end
 
 % plot
+figure;
 plot(duration_vec,pct_change_nu_ee_vec)
 xlabel('sonication duration')
 ylabel('ratio of MEP change to baseline')
+
+end
+
 
 
     % test stim waveform

@@ -706,6 +706,7 @@ for jj = 1:length(duty_cycle_vec)
 end
 
 % plot
+figure;
 plot(duty_cycle_vec,pct_change_nu_ee_vec)
 xlabel('duty cycle (%) - 80s of sonication duration')
 ylabel('ratio of MEP change to baseline')
