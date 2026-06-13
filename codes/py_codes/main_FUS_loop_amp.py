@@ -15,9 +15,9 @@ from scipy.io import savemat
 import copy
 
 
-# amp_vec = [1,2,3,5,10,10.72,15,20,30,40,50,100,200,300,400,500]
+amp_vec = [1,2,3,5,10,10.72,15,20,30,40,50,100,200,300,400,500]
 
-amp_vec = [1,2,3,5,10,10.72,15,20,30,40,50]
+# amp_vec = [1,2,3,5,10,10.72,15,20,30,40,50]
 pct_change_nu_ee_vec_py = np.zeros(len(amp_vec))
 
 for ii in range(0,len(amp_vec)):
