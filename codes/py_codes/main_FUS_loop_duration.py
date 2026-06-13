@@ -15,9 +15,9 @@ from scipy.io import savemat
 import copy
 
 
-# duration_vec = [20,60,100,120,140,160,180]
+duration_vec = [20,60,100,120,140,160,180]
 
-duration_vec = [40]
+# duration_vec = [40]
 pct_change_nu_ee_vec_py = np.zeros(len(duration_vec))
 
 for ii in range(0,len(duration_vec)):
