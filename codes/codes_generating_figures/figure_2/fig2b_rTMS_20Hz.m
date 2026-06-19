@@ -1,10 +1,10 @@
 
 
 % Initialize:
-% duration_vec = [600];
+% duration_vec = [30];
 % pct_change_nu_ee_vec = zeros(1,length(duration_vec));
 
-function pct_change_nu_ee_vec = fig2b_rTMS_1Hz(duration_vec)
+function pct_change_nu_ee_vec = fig2b_rTMS_20Hz(duration_vec)
 
 for jj = 1:length(duration_vec)
 
@@ -245,7 +245,7 @@ for jj = 1:length(duration_vec)
     
     
     params.width = 0.5e-3;
-    params.bursts = 1; params.freq = 50; params.oscillation_freq = 1;
+    params.bursts = 1; params.freq = 50; params.oscillation_freq = 20;
     params.onset = 50; params.Duration = duration_vec(jj); params.on = 2; params.off = 0;
     
     %% --- White-noise (added to one pop), optional ---
@@ -691,7 +691,7 @@ end
 % plot
 
 % Category labels
-categories = {'rTMS-1Hz 600s'};
+categories = {'rTMS-10Hz 60s'};
 
 figure;
 bar(pct_change_nu_ee_vec);

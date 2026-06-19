@@ -8,7 +8,7 @@ for jj = 1:length(duration_vec)
 
     %% --- Grid and time ---
     Nx = 1; Ny = 1;      % single node of Nx=Ny=1
-    T = 1250 + duration_vec(jj);             % 600; simulation time [s] 
+    T = 650 + duration_vec(jj);             % 600; simulation time [s] 
     deltat = 1e-4;       
     params.deltat = deltat;
     boundary = 'torus';  % boundary form of wave grids (not active if Nx=Ny=1)
