@@ -1,44 +1,67 @@
 function phi_x = TMS(step, params)
+% TMS
+%   Integer-index TMS waveform to avoid floating-point mod artifacts that 
+    % cause different num of indices in pulses
+%
+%   step follows your existing convention:
+%       t = (step - 1) * params.deltat
 
-    % Convert step index to time
-    t = (step-1) * params.deltat;
+    dt = params.deltat;
 
-    % Stop entirely if beyond simulation Duration
-    if t > (params.Duration+params.onset) || t<params.onset
+    % Convert to absolute time, preserving your original convention
+    t = (step - 1) * dt;
+
+    % Before onset: no stimulation
+    if t < params.onset
         phi_x = 0;
         return;
     end
 
-    % Determine cycle length
-    cycle_len = params.on + params.off;
+    % Integer sample index since onset
+    k = round((t - params.onset) / dt);
 
-    % Handle special case: cTBS (off=0)
-    if params.off == 0
-        in_on_phase = true;  % always in "on" state
-        t_in_cycle = t;      % just the running time
-    else
-        t_in_cycle = mod(t, cycle_len);
-        in_on_phase = (t_in_cycle < params.on);
+    % Duration in integer samples
+    duration_steps = round(params.Duration / dt);
+
+    % After stimulation duration: no stimulation
+    if k < 0 || k >= duration_steps
+        phi_x = 0;
+        return;
     end
 
-    % Default: no stimulation
-    phi_x = 0;
+    % Convert waveform timing to integer samples
+    pulse_width_steps  = round(params.width / dt);
+    pulse_period_steps = round((1 / params.freq) / dt);
+    burst_period_steps = round((1 / params.oscillation_freq) / dt);
 
-    if in_on_phase
-        % Within burst cycle
-        burst_period = 1 / params.oscillation_freq;   % seconds per burst
-        pulse_period = 1 / params.freq;               % seconds between pulses
-        burst_idx    = floor(t_in_cycle / burst_period);
-        t_in_burst   = mod(t_in_cycle, burst_period);
+    % Handle on/off cycling
+    if params.off == 0
+        k_in_on = k;
+    else
+        on_steps    = round(params.on / dt);
+        cycle_steps = round((params.on + params.off) / dt);
 
-        % Only deliver 'params.bursts' pulses per burst
-        if t_in_burst < params.bursts * pulse_period
-            pulse_idx   = floor(t_in_burst / pulse_period);
-            pulse_start = pulse_idx * pulse_period;
-            if (t_in_burst >= pulse_start) && (t_in_burst < pulse_start + params.width)
-                %phi_x = params.amp * ones(Nnodes,1);
-                phi_x = params.amp;
-            end
+        k_cycle = mod(k, cycle_steps);
+
+        if k_cycle >= on_steps
+            phi_x = 0;
+            return;
         end
+
+        k_in_on = k_cycle;
+    end
+
+    % Position inside current burst
+    k_in_burst = mod(k_in_on, burst_period_steps);
+
+    % Which pulse within burst?
+    pulse_idx  = floor(k_in_burst / pulse_period_steps); % 0-based
+    k_in_pulse = k_in_burst - pulse_idx * pulse_period_steps;
+
+    % Deliver only params.bursts pulses per burst
+    if pulse_idx < params.bursts && k_in_pulse < pulse_width_steps
+        phi_x = params.amp;
+    else
+        phi_x = 0;
     end
 end
