@@ -107,13 +107,13 @@ T = 50 + 40 + 600 = 690
 
 **b.**
 - All TMS protocols  
-- Post-stimulation time: 20 min  
+- Post-stimulation time: 600 s  
 
 **c.**
 - All TFUS protocols  
 - Duration = 80 s  
 - Duty cycle = 10%  
-- Post-stimulation time: 5 min  
+- Post-stimulation time: 300 s  
 
 ---
 
