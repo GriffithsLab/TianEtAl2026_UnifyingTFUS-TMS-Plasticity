@@ -53,11 +53,11 @@ params.oscillation_freq = 5
 params.on = 2
 params.off = 8
 
-- **rTMS (1 Hz or 10 Hz)**
+- **rTMS (1 Hz or 20 Hz)**
 
 params.bursts = 1
 params.freq = 50
-params.oscillation_freq = 1 or 10
+params.oscillation_freq = 1 or 20
 params.on = 2
 params.off = 0
 
