@@ -184,7 +184,7 @@ for ii in range(0,len(duration_vec)):
     
     # ---- Continuous sinusoidal pulse-train config ----
     params.stim.cont = SimpleNamespace()
-    params.stim.cont.prf_hz = 20.0 # 5
+    params.stim.cont.prf_hz = 5.0 # 5
     
     duty_cycle = 0.1
     params.stim.cont.pulse_duration_s = duty_cycle * (1.0 / params.stim.cont.prf_hz)
