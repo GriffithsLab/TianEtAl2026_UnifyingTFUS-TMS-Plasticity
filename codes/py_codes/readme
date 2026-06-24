@@ -1,6 +1,10 @@
-The python codes are translated from the matlab codes and generate consistent results.
+The python codes are direct translations from the matlab codes and generate consistent results.
 The variable names used in the python codes are the same as the matlab codes, and 
-the results can be reproduced as follows:
+the results can be replicated as follows:
+
+Some slight difference exists between the results from matlab and python exists 
+due to their intrinsic noise functions (see the folder "py_codes/results").
+
 
 ### Figures 2–4 (General Instructions)
 
@@ -126,7 +130,7 @@ Locations:
 
 ## Figure 4 — TFUS Parameter Sweep (plasticity effect recorded at post-stim time at 5 min)
 
-**a.** : run 
+**a.** : run main_FUS_loop_amp.py
 - Replace equation with explicit amplitude values  
 - (Only case where TFUS amplitude is manually changed)  
 
@@ -137,19 +141,19 @@ Default:
 
 
 
-**b.**
+**b.** : run main_FUS_loop_duration.py
 - PRF fixed at 5 Hz  
 - Duty cycle fixed at 10%  
 
-**c.**
+**c.**: run main_FUS_loop_PRF.py  
 - Duration fixed at 80 s  
 - Duty cycle fixed at 10%  
 
-**d.**
+**d.**: run main_FUS_loop_DC.py
 - Duration fixed at 80 s  
 - PRF fixed at 5 Hz  
 
-**e.**
+**e.**: run main_FUS_loop_DC_same_energy.py
 - PRF fixed at 5 Hz  
 - Duration adjusted based on duty cycle  
 
