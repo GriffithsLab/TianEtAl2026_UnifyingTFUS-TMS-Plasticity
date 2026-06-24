@@ -1,4 +1,4 @@
 The python codes are translated from the matlab codes and generate consistent results.
-The variable names used in the python codes are the same as the matlab codes. Thus, the results can be 
-reproduced by referring to the README file
+The variable names used in the python codes are the same as the matlab codes. Thus, the results in Figures 2 & 4 can be 
+reproduced by referring to the variable names and protocol definitions in the README file 
 
