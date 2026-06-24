@@ -1,4 +1,159 @@
 The python codes are translated from the matlab codes and generate consistent results.
-The variable names used in the python codes are the same as the matlab codes. Thus, the results in Figures 2 & 4 can be 
-reproduced by referring to the variable names and protocol definitions in the README file 
+The variable names used in the python codes are the same as the matlab codes, and 
+the results can be reproduced as follows:
+
+### Figures 2–4 (General Instructions)
+
+The results in Figures 2–4 can be replicated using:
+- TFUS simulation: `main_FUS.py`
+- TMS simulation: `main_TMS.py`
+
+#### TFUS parameters
+Set the following variables:
+
+- Sonication duration: `params.Duration`
+- Pulse repetition frequency (PRF): `params.stim.cont.prf_hz` 
+- Amplitude: `params.stim.cont.mean`
+- Duty cycle: `duty_cycle`
+
+**Important:**
+- TFUS amplitude is derived from TMS amplitude (`amp_TMS = 40`) via the equivalent-energy principle (Eq. 1)
+- **Exception:** Figure 4a — replace the equation with explicit values
+
+#### TMS parameters
+
+- Duration: `params.Duration` 
+
+Protocol configurations:
+
+- **cTB-TMS**
+params.bursts = 3
+params.freq = 50
+params.oscillation_freq = 5
+params.on = 2
+params.off = 0
+
+
+- **iTB-TMS**
+params.bursts = 3
+params.freq = 50
+params.oscillation_freq = 5
+params.on = 2
+params.off = 8
+
+- **rTMS (1 Hz or 20 Hz)**
+
+params.bursts = 1
+params.freq = 50
+params.oscillation_freq = 1 or 20
+params.on = 2
+params.off = 0
+
+
+---
+
+### Plasticity Output
+
+Plasticity is quantified as:
+
+> Ratio of MEP change relative to baseline
+
+Output variable:
+
+pct_change_nu_ee
+
+
+---
+
+### Simulation Timing
+
+- Stimulation onset time: **50 s**
+- Total simulation time:  T 
+
+T = onset + stimulation duration + post-stimulation time
+
+
+**Example:**
+- cTB-TMS-40s with 10 min post-stimulation:
+
+T = 50 + 40 + 600 = 690
+
+
+---
+
+## Figure 2
+
+**a.**
+- cTB-TMS-40s and cTB-TMS-80s  
+- Post-stimulation time: 600 s
+
+- cTB-TFUS-40s and cTB-TFUS-80s  
+- PRF = 5 Hz  
+- Duty cycle = 10%  
+- Duration = 40 s / 80 s  
+- Post-stimulation time: 300 s  
+
+**b.**
+- All TMS protocols  
+- Post-stimulation time: 600 s  
+
+**c.**
+- All TFUS protocols  
+- Duration = 80 s  
+- Duty cycle = 10%  
+- Post-stimulation time: 300 s  
+
+---
+
+## Figure 3
+
+**c.**
+- Omega function same as Figure 1  
+
+**e.**
+- Protocols same as Figure 2  
+
+Variables correspond to:
+- `nu_ee` → nu 
+- `nutil_ee` → nu_tilda 
+- `Ca_ee` → intracellular calcium concentration  
+
+Locations:
+- `main_FUS.py` 
+- `main_TMS.py` 
+
+---
+
+## Figure 4 — TFUS Parameter Sweep (plasticity effect recorded at post-stim time at 5 min)
+
+**a.** : run 
+- Replace equation with explicit amplitude values  
+- (Only case where TFUS amplitude is manually changed)  
+
+Default:
+- Duration = 80 s  
+- PRF = 5 Hz  
+- Duty cycle = 10%  
+
+
+
+**b.**
+- PRF fixed at 5 Hz  
+- Duty cycle fixed at 10%  
+
+**c.**
+- Duration fixed at 80 s  
+- Duty cycle fixed at 10%  
+
+**d.**
+- Duration fixed at 80 s  
+- PRF fixed at 5 Hz  
+
+**e.**
+- PRF fixed at 5 Hz  
+- Duration adjusted based on duty cycle  
+
+Constraint:
+
+Total TFUS-ON time = duty cycle × duration = constant (10% × 80 s)
 
