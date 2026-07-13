@@ -87,7 +87,7 @@ T = 50 + 40 + 600 = 690
 
 ## Figure 2
 
-**a.**
+**b-c.**
 - cTB-TMS-40s and cTB-TMS-80s  
 - Post-stimulation time: 600 s
 
@@ -97,11 +97,11 @@ T = 50 + 40 + 600 = 690
 - Duration = 40 s / 80 s  
 - Post-stimulation time: 300 s  
 
-**b.**
+**d.**
 - All TMS protocols  
 - Post-stimulation time: 600 s  
 
-**c.**
+**e.**
 - All TFUS protocols  
 - Duration = 80 s  
 - Duty cycle = 10%  
