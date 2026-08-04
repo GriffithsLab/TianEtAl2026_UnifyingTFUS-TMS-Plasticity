@@ -204,12 +204,12 @@ function [nu_ee, nutil_ee, Ca_ee,pct_change_nu_ee] = fig3_TMS(duration)
     
     %% --- Axonal delays Tau(i,j) ---
     % axonal transduction delays may be considered for corticothalamic connections
-    
-    params.Tau = zeros(Npop,Npop); 
-    params.Tau_sec(1,3) = 0.0425;  % e←s
-    params.Tau_sec(2,3) = 0.0425;  % i←s
-    params.Tau_sec(3,1) = 0.0425;  % s←e
-    params.Tau_sec(4,1) = 0.0425;  % r←e
+
+    params.Tau = zeros(Npop,Npop); % no delay
+    % params.Tau_sec(1,3) = 0.0425;  % e←s
+    % params.Tau_sec(2,3) = 0.0425;  % i←s
+    % params.Tau_sec(3,1) = 0.0425;  % s←e
+    % params.Tau_sec(4,1) = 0.0425;  % r←e
     
     params.Tau_steps = round(params.Tau / deltat); % time steps
     max_tau = max(params.Tau_steps,[],'all'); if isempty(max_tau), max_tau=0; end
