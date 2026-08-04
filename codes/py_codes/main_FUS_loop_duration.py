@@ -161,12 +161,12 @@ for ii in range(0,len(duration_vec)):
     
     # --- Axonal delays Tau(i,j) ---
     # Note: MATLAB code sets Tau_sec, but computes Tau_steps from Tau (zeros).
-    params.Tau      = np.zeros((Npop, Npop), dtype=float)
-    params.Tau_sec  = np.zeros((Npop, Npop), dtype=float)
-    params.Tau_sec[0,2] = 0.0425  # e←s
-    params.Tau_sec[1,2] = 0.0425  # i←s
-    params.Tau_sec[2,0] = 0.0425  # s←e
-    params.Tau_sec[3,0] = 0.0425  # r←e
+    params.Tau      = np.zeros((Npop, Npop), dtype=float) # no delay
+    params.Tau_sec  = np.zeros((Npop, Npop), dtype=float) # no delay
+    # params.Tau_sec[0,2] = 0.0425  # e←s
+    # params.Tau_sec[1,2] = 0.0425  # i←s
+    # params.Tau_sec[2,0] = 0.0425  # s←e
+    # params.Tau_sec[3,0] = 0.0425  # r←e
     
     params.Tau_steps = np.round(params.Tau / deltat).astype(int)  # time steps (zeros)
     max_tau = int(np.max(params.Tau_steps)) if params.Tau_steps.size else 0 
