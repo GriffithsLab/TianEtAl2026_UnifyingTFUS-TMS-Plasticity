@@ -265,7 +265,7 @@ for jj = 1:length(duty_cycle_vec)
 
     %params.stim.cont.mean             = amp_TMS*sqrt((2*n_TMS*p_TMS)/((params.stim.cont.pulse_duration_s)*(2+r_a_m^2))); % DC mean during pulse
     
-    params.stim.cont.mean             = 10.72;   % cTBS(3,5) with pulse_width=0.5ms  
+    params.stim.cont.mean             = 10.72;   % 
 
     params.stim.cont.amp              = r_a_m*params.stim.cont.mean;       % oscillatory amp ("=0" means constant)     
     %params.stim.cont.amp              = 0;
