@@ -198,12 +198,12 @@ for ii in range(0,len(PRF_vec)):
     n_TMS = 3.0
     p_TMS = 0.5e-3
     
-    params.stim.cont.mean = amp_TMS * np.sqrt(
-        (2.0 * n_TMS * p_TMS)
-        / (params.stim.cont.pulse_duration_s * (2.0 + r_a_m**2))
-    )
+  #  params.stim.cont.mean = amp_TMS * np.sqrt(
+  #      (2.0 * n_TMS * p_TMS)
+  #      / (params.stim.cont.pulse_duration_s * (2.0 + r_a_m**2))
+  #  )
     
-   # params.stim.cont.mean             = amp_vec[ii]
+    params.stim.cont.mean             = 10.72
     
     params.stim.cont.amp = r_a_m * params.stim.cont.mean
     params.stim.cont.phase_rad = 0.0
