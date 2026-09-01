@@ -145,7 +145,8 @@ Locations:
 Default:
 - Duration = 80 s  
 - PRF = 5 Hz  
-- Duty cycle = 10%  
+- Duty cycle = 10% 
+- TFUS amplitude = 10.72 (fixed in b-e)
 
 **b.**
 - PRF fixed at 5 Hz  
