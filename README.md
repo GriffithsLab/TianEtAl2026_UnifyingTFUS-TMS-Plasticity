@@ -5,7 +5,7 @@ This repository includes the code required to reproduce the results in:
 
 ## Publication information:
 **BioRxiv**
-DOI:
+DOI:https://doi.org/10.64898/2026.07.09.737614
 
 ## Authors:
 - Yupeng Tian<sup>1,2,3</sup>
