@@ -1,6 +1,6 @@
 
 % Initialize:
-% duty_cycle_vec = [1,2,5,10,15,20,30,40,50]/100;
+% duty_cycle_vec = [1,2,5,10,15,20,25,30,35,40,45,50]/100;
 % pct_change_nu_ee_vec = zeros(1,length(duty_cycle_vec));
 
 function pct_change_nu_ee_vec = fig4d(duty_cycle_vec)
