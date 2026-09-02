@@ -14,7 +14,7 @@ from plotting_func import plot_results, plot_results_j_to_i
 from scipy.io import savemat
 import copy
 
-ori = [1,2,5,10,15,20,30,40,50]
+ori = [1,2,5,10,15,20,25,30,35,40,45,50]
 duty_cycle_vec = [x/100 for x in ori]
 
 
